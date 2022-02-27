@@ -14,42 +14,92 @@ export class MyElement extends LitElement {
         border: solid 1px gray;
         padding: 16px;
         max-width: 800px;
+        margin: 0 auto;
+      }
+      .button_container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+      }
+      .display {
+        font-size: 50px;
+        font-feature-ettings: 'tnum';
+        font-ariant-numeric: tabular-nums;
+      }
+      button {
+        border: 1px solid black;
+        background-color: transparent;
+        padding: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+      button:disabled:hover {
+        background-color: transparent;
+        color: #1010104d;
+        cursor: inherit;
       }
     `
   }
 
   static get properties() {
     return {
-      /**
-       * The name to say "Hello" to.
-       */
-      name: { type: String },
-
-      /**
-       * The number of times the button has been clicked.
-       */
-      count: { type: Number }
+      time: { type: Number },
+      stopTime: { type: Number },
+      timer: { attribute: false }
     }
   }
 
   constructor() {
     super()
-    this.name = 'World'
-    this.count = 0
+    this.time = 0
+    this.timer = null
+    this.stopTime = 0
   }
 
   render() {
     return html`
-      <h1>Hello, ${this.name}!</h1>
-      <button @click=${this._onClick} part="button">
-        Click Count: ${this.count}
-      </button>
-      <slot></slot>
+      <div class="button_container">
+        <h1>Stop Watch</h1>
+        <p class="display">${(this.time / 1000).toFixed(1)}</p>
+        <div class="button">
+          <button @click=${this._start} ?disabled=${this.timer}>
+            ${this.time ? 'リスタート' : 'スタート'}
+          </button>
+          <button @click=${this._stop}>ストップ</button>
+          <button @click=${this._reset}>リセット</button>
+        </div>
+      </div>
     `
   }
 
-  _onClick() {
-    this.count++
+  _start() {
+    if (!this.timer) {
+      const startTime = new Date()
+      this.timer = setInterval(() => {
+        const now = new Date()
+        this.time = now - startTime + this.stopTime
+      }, 100)
+    }
+  }
+  _stop() {
+    if (this.timer) {
+      clearInterval(this.timer)
+      this.timer = null
+      this.stopTime = this.time
+    }
+  }
+  _reset() {
+    if (this.timer) {
+      clearInterval(this.timer)
+      this.timer = null
+      this._start()
+    }
+    this.time = 0
+    this.stopTime = 0
   }
 }
 

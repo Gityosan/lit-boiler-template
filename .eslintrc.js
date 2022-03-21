@@ -5,7 +5,12 @@ export default {
     es6: true,
     node: true
   },
-  extends: ['eslint:recommended', 'plugin:lit/recommended', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:storybook/recommended',
+    'plugin:lit/recommended',
+    'prettier'
+  ],
   parserOptions: {
     parser: '@babel/eslint-parser',
     requireConfigFile: false

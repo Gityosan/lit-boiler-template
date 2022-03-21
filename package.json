@@ -2,14 +2,6 @@
   "name": "lit-boiler-template",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "main": "dist/my-element.es.js",
-  "exports": {
-    ".": "./dist/my-element.es.js"
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,20 +9,30 @@
     "lint:pre": "prettier -w --ignore-path .gitignore .",
     "lint:es": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
     "lint:js": "yarn lint:pre && yarn lint:es",
-    "lint": "yarn lint:js && yarn lint:style"
+    "lint": "yarn lint:js && yarn lint:style",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "lit": "^2.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.8",
     "@babel/eslint-parser": "^7.17.0",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/web-components": "^6.4.19",
+    "babel-loader": "^8.2.3",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-lit": "^1.6.1",
+    "eslint-plugin-storybook": "^0.5.7",
     "postcss-lit": "^0.4.3",
     "prettier": "^2.5.1",
     "sass": "^1.49.8",
     "sass-loader": "^10.2.0",
+    "storybook-builder-vite": "^0.1.21",
     "stylelint": "^14.3.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",

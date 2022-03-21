@@ -23,3 +23,9 @@ Lit の開発用テンプレートです。lit×vite の構成に linter/formatt
 ### stopwatch
 
 - サンプルとして簡易的なストップウォッチアプリを実装したものです。
+- https://stopwatch.d1k5vwj8k5chym.amplifyapp.com/
+
+### storybook
+
+- storybook を導入したリポジトリです。
+- https://storybook.d1k5vwj8k5chym.amplifyapp.com/?path=/story/example-introduction--page

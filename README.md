@@ -13,3 +13,19 @@ Lit の開発用テンプレートです。lit×vite の構成に linter/formatt
 6. `git remote set-url origin [新しいリモートリポジトリURL]`で繋ぐリポジトリを変えてください。
 7. `git remote -v`で変更できたか確認してください。
 8. お好きなように変更し、終わったら繋ぎかえた先のリポジトリにプッシュしてください。
+
+## ブランチ紹介
+
+### main
+
+- スタンダードなブランチです。
+
+### stopwatch
+
+- サンプルとして簡易的なストップウォッチアプリを実装したものです。
+- https://stopwatch.d1k5vwj8k5chym.amplifyapp.com/
+
+### storybook
+
+- storybook を導入したリポジトリです。
+- https://storybook.d1k5vwj8k5chym.amplifyapp.com/?path=/story/example-introduction--page

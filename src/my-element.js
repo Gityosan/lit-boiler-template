@@ -10,11 +10,14 @@ export class MyElement extends LitElement {
   static get styles() {
     return css`
       :host {
+        color: #444;
         display: block;
-        border: solid 1px gray;
         padding: 16px;
         max-width: 800px;
         margin: 0 auto;
+        border-radius: 2%;
+        background: #ffffff;
+        box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
       }
       .button_container {
         display: flex;
@@ -27,20 +30,33 @@ export class MyElement extends LitElement {
         font-ariant-numeric: tabular-nums;
       }
       button {
-        border: 1px solid black;
-        background-color: transparent;
+        border: none;
+        color: #444;
+        background-color: #efefef;
+        box-shadow: -6px -6px 14px rgba(255, 255, 255, 0.7),
+          -6px -6px 10px rgba(255, 255, 255, 0.5),
+          6px 6px 8px rgba(255, 255, 255, 0.075),
+          6px 6px 10px rgba(0, 0, 0, 0.15);
         padding: 16px;
         border-radius: 10px;
         cursor: pointer;
       }
       button:hover {
-        background-color: black;
-        color: white;
+        box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
+          -2px -2px 4px rgba(255, 255, 255, 0.4),
+          2px 2px 2px rgba(255, 255, 255, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
       }
-      button:disabled:hover {
-        background-color: transparent;
-        color: #1010104d;
+      button:active {
+        box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
+          inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+          inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+          inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+      }
+      button:disabled {
+        background-color: #fff;
+        color: #fff;
         cursor: inherit;
+        box-shadow: none;
       }
     `
   }

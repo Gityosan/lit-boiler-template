@@ -1,15 +1,15 @@
-import { Header } from './Header';
+import { Header } from '../component/Header'
 
 export default {
-  title: 'Example/Header',
-};
+  title: 'Example/Header'
+}
 
-const Template = (args) => Header(args);
+const Template = (args) => Header(args)
 
-export const LoggedIn = Template.bind({});
+export const LoggedIn = Template.bind({})
 LoggedIn.args = {
-  user: {},
-};
+  user: {}
+}
 
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+export const LoggedOut = Template.bind({})
+LoggedOut.args = {}

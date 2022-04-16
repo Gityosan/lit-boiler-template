@@ -1,4 +1,4 @@
-import { Button } from './Button';
+import { Button } from '../component/Button'
 
 // More on default export: https://storybook.js.org/docs/web-components/writing-stories/introduction#default-export
 export default {
@@ -9,34 +9,34 @@ export default {
     onClick: { action: 'onClick' },
     size: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
-    },
-  },
-};
+      options: ['small', 'medium', 'large']
+    }
+  }
+}
 
 // More on component templates: https://storybook.js.org/docs/web-components/writing-stories/introduction#using-args
-const Template = (args) => Button(args);
+const Template = (args) => Button(args)
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/web-components/writing-stories/args
 Primary.args = {
   primary: true,
-  label: 'Button',
-};
+  label: 'Button'
+}
 
-export const Secondary = Template.bind({});
+export const Secondary = Template.bind({})
 Secondary.args = {
-  label: 'Button',
-};
+  label: 'Button'
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
   size: 'large',
-  label: 'Button',
-};
+  label: 'Button'
+}
 
-export const Small = Template.bind({});
+export const Small = Template.bind({})
 Small.args = {
   size: 'small',
-  label: 'Button',
-};
+  label: 'Button'
+}

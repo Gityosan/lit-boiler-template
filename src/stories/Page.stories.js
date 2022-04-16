@@ -1,19 +1,19 @@
-import { Page } from './Page';
-import * as HeaderStories from './Header.stories';
+import { Page } from '../component/Page'
+import * as HeaderStories from './Header.stories'
 
 export default {
-  title: 'Example/Page',
-};
+  title: 'Example/Page'
+}
 
-const Template = (args) => Page(args);
+const Template = (args) => Page(args)
 
-export const LoggedIn = Template.bind({});
+export const LoggedIn = Template.bind({})
 LoggedIn.args = {
   // More on composing args: https://storybook.js.org/docs/web-components/writing-stories/args#args-composition
-  ...HeaderStories.LoggedIn.args,
-};
+  ...HeaderStories.LoggedIn.args
+}
 
-export const LoggedOut = Template.bind({});
+export const LoggedOut = Template.bind({})
 LoggedOut.args = {
-  ...HeaderStories.LoggedOut.args,
-};
+  ...HeaderStories.LoggedOut.args
+}

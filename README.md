@@ -27,5 +27,5 @@ Lit の開発用テンプレートです。lit×vite の構成に linter/formatt
 
 ### storybook
 
-- storybook を導入したリポジトリです。
+- storybook を導入したブランチです。
 - https://storybook.d1k5vwj8k5chym.amplifyapp.com/?path=/story/example-introduction--page
